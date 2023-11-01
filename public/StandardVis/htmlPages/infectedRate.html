@@ -5,10 +5,10 @@
     <title>Infected rates of Covid'19</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../plugins/jquery-steps/jquery.steps.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
     <style>
         body {
+            min-height: calc(100vh - 16px);
             background-image: linear-gradient(0deg, #D8B5FF, #1EAE98);
         }
 
@@ -56,7 +56,7 @@
                         <div class="searchbar">
                             <select id="districtSelector" class="form-control" multiple></select>
                         </div>
-                        <div id="map" style="width: 100%; height: 500px;">
+                        <div id="map" style="width: 100%; height: 600px;">
                         </div>
                     </div>
                     <div class="flex-container">
@@ -77,101 +77,15 @@
                 </div>
             </div>
         </div>
-        <div class="row mt-3">
-            <div class="col">
-                <div class="card layers">
-                    <div id="setter">
-                        <h3>Question 1</h3>
-                        <section>
-                            <div class="form-group">
-                                <label>Can you name a district that has the highest infection rate from the
-                                    dropdown?</label>
-                                <select id="q1" class="form-control">
-                                    <option value="" disabled selected>Select district</option>
-                                    <option value="Mansfeld-Suedharz">Mansfeld-Suedharz</option>
-                                    <option value="Wartburgkreis">Wartburgkreis</option>
-                                    <option value="Berlin">Berlin</option>
-                                </select>
-                            </div>
-                        </section>
-
-                        <h3>Question 2</h3>
-                        <section>
-                            <label>The district Muenster has an infection rate?</label>
-                            <div class="form-check">
-                                <input type="radio" name="q2radio" value="high" class="form-check-input">
-                                <label>High</label>
-                            </div>
-                            <div class="form-check">
-                                <input type="radio" name="q2radio" value="medium" class="form-check-input">
-                                <label>Medium</label>
-                            </div>
-                            <div class="form-check">
-                                <input type="radio" name="q2radio" value="low" class="form-check-input">
-                                <label>Low</label>
-                            </div>
-                        </section>
-
-                        <h3>Question 3</h3>
-                        <section>
-                            <label>Berlin having higher infection rate than Frankfurt</label>
-                            <div class="form-check">
-                                <input type="radio" name="q3radio" value="true" class="form-check-input">
-                                <label>True</label>
-                            </div>
-                            <div class="form-check">
-                                <input type="radio" name="q3radio" value="false" class="form-check-input">
-                                <label>False</label>
-                            </div>
-                            <div class="form-check">
-                                <input type="radio" name="q3radio" value="null" class="form-check-input">
-                                <label>Not Enough Information</label>
-                            </div>
-                        </section>
-
-                        <h3>Question 4</h3>
-                        <section>
-                            <label>How demanding was the task to answer using the above visualisation?</label>
-                            <div class="form-check">
-                                <input type="radio" name="q4radio" value="Not-demanding" class="form-check-input">
-                                <label>Not Demanding</label>
-                            </div>
-                            <div class="form-check">
-                                <input type="radio" name="q4radio" value="Somewhat-demanding" class="form-check-input">
-                                <label>Somewhat Demanding</label>
-                            </div>
-                            <div class="form-check">
-                                <input type="radio" name="q4radio" value="Very -demanding" class="form-check-input">
-                                <label>Very Demanding</label>
-                            </div>
-                        </section>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <div class="mt-3 d-flex justify-content-end">
-            <a href="../../MetaphorVis/rain.html" class="btn btn-primary">Next Page</a>
-        </div>
     </div>
     <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
     <script src="https://cdn.amcharts.com/lib/4/maps.js"></script>
     <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.1/axios.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="../plugins/jquery-steps/jquery.steps.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="../utils.js"></script>
     <script>
-        $("#setter").steps({
-            headerTag: "h3",
-            bodyTag: "section",
-            transitionEffect: "slideLeft",
-            autoFocus: true,
-            titleTemplate: "#title#"
-        });
-
         var infection = [];
         let selectedDist = [];
 
