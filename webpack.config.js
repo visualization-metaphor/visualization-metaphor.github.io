@@ -2,10 +2,10 @@ const path = require("path");
 
 module.exports = {
   entry: {
-    main: './src/app.js',
-    rain: './src/rain.page.js',
-    sun: './src/sun.page.js',
-    lightning: './src/lightning.page.js'
+    main: './public/MetaphorVis/src/app.js',
+    rain: './public/MetaphorVis/src/rain.page.js',
+    sun: './public/MetaphorVis/src/sun.page.js',
+    lightning: './public/MetaphorVis/src/lightning.page.js'
   },
   output: {
     filename: '[name].bundle.js',
@@ -20,7 +20,6 @@ module.exports = {
       },
     ]
   },
-  devtool: "source-map",
   devServer: {
     static: {
       directory: path.join(__dirname, 'public'),
