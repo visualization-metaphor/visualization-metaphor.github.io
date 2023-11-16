@@ -233,7 +233,7 @@ async function initSelector() {
   const districts = [];
 
   for (let district of districtData) {
-      districts.push({ id: district.RS, text: district.GEN });
+      districts.push({ id: district.RS, text: district.BEZ + '-' + district.GEN });
   }
 
   $("#districtSelector").select2({
