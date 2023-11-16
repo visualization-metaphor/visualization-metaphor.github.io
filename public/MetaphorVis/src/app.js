@@ -52,12 +52,12 @@ export class App {
                     if (this.ctx.isPointInPath(x, y)) {
                         $('#tooltip').show();
                         $('#tooltip').text(district.properties.GEN);
-                        $('#tooltip').css("top", e.offsetY + "px");
-                        $('#tooltip').css("left", e.offsetX + "px");
+                        $('#tooltip').css("top", e.offsetY - 15 + "px");
+                        $('#tooltip').css("left", e.offsetX + 10 + "px");
                         break;
                     }
                     else {
-                        $('#tooltip').text("");
+                        $('#tooltip').hide();
                     }
                 }
             });
