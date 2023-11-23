@@ -78,7 +78,8 @@ export class Districts {
         $("#districtSelector").select2({
             data: districts,
             placeholder: "Search Districts",
-            maximumSelectionLength: 3
+            maximumSelectionLength: 3,
+            allowClear: true
         });
 
         $("#districtSelector").on("change", () => {
